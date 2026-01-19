@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Academic & Research</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --accent: #38bdf8; /* Vibrant Cyan */
+            --secondary: #94a3b8;
+            --border: #334155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            padding: 4rem 0 2rem 0;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; }
+        .subtitle { color: var(--accent); font-weight: 600; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        section { margin-top: 4rem; }
+        h2 { 
+            font-size: 1.25rem; 
+            color: var(--secondary); 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        h2::after {
+            content: "";
+            flex: 1;
+            margin-left: 1rem;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .education-card, .project-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover, .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .item-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+        .title { color: var(--accent); font-weight: 600; font-size: 1.1rem; }
+        .date { color: var(--secondary); font-size: 0.9rem; }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: #2d3748;
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+        a:hover { opacity: 0.8; text-decoration: underline; }
+
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem 2rem 2rem;
+            font-size: 0.8rem;
+            color: var(--secondary);
+        }
+
+        /* 1. Add smooth scrolling to the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 2. Style the navigation bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.9); /* Matches your dark theme with slight transparency */
+            backdrop-filter: blur(10px); /* Adds a modern frosted-glass effect */
+            border-bottom: 1px solid #334155;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8; /* Uses your accent blue */
+        }
+
+        /* 3. Add an offset to your sections so the nav doesn't cover the titles */
+        section {
+            padding-top: 80px; 
+            margin-top: -20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Jacob Yousif</h1>
+            <p class="subtitle">About Me</p>
+            <p style="color: var(--secondary);">I am a <strong>Junior</strong> at the University of Detroit Mercy studying <strong>Computer Science</strong> with a minor in <strong>Business</strong>. <br>Experienced with <Strong>AI</Strong>, <Strong>Python</Strong>, <Strong>Java</Strong>, <Strong>C++</Strong>, and more.<br>Work experience in research focusing on <Strong>artificial intelligence</Strong>.</p>
+        </header>
+
+        <nav>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-card">
+                <div class="item-header">
+                    <span class="title">University of Detroit Mercy</span>
+                    <span class="date">Expected May 2027</span>
+                </div>
+                <div style="font-weight: 500;">B.S. in Computer Science, Minor in Business Administration</div>
+                <p style="font-size: 0.9rem; color: var(--secondary); margin-top: 0.5rem;">
+                    <strong>Core Focus:</strong> Programming, Artificial Intelligence, Software Design, and Core Business Skills <br>
+                    <strong>GPA:</strong> 3.66
+                </p>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research & Relevant Projects</h2>
+            <div class="project-card">
+                <div class="item-header">
+                    <span class="title">Undergraduate Research Intern</span>
+                </div>
+                <p>Utilized pyBKT, a Python library for Bayesian Knowledge Tracing, to model student learning and predict knowledge mastery over time. Generated, cleaned, and analyzed large synthetic educational datasets using ChatGPT API, Python, and Pandas. Presented findings at the November 2025 UDM Engineering & Science Research Symposium and will present at the April 2026 UDM Celebration of Scholarly Achievement (CSACE).
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="item-header">
+                    <span class="title">International Collegiate Programming Contest (ICPC)</span>
+                </div>
+                <p>Represented University of Detroit Mercy as part of a three-person team solving complex algorithmic and data structure challenges in C++ and Python under tight time constraints.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="item-header">
+                    <span class="title">AI Generated Escape Room Game</span>
+                </div>
+                <p>Utilized LLMs (Large Language Models) to generate a real-time escape room game. The 2D game consisted of puzzles, an active threat, an inventory system, and a time limit. Optimized API prompt engineering to minimize bugs and ensure puzzles were logically sound.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="item-header">
+                    <span class="title">Hangman</span>
+                </div>
+                <p>Developed a JavaFX program displaying a GUI that selects a word at random and allows the user to guess letters until they guess the word, or complete the hangman.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="item-header">
+                    <span class="title">Library Management System</span>
+                </div>
+                <p>Wrote a C++ program enabling users to check out, search for, and return books, while allowing administrators to manage users and library inventory.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="item-header">
+                    <span class="title">Theater Seating</span>
+                </div>
+                <p>Developed a C++ program allowing users to purchase tickets, view a seating chart, and access specific seat details, displaying strong problem-solving and software development skills.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Proficiencies</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Advanced Excel</span>
+                <span class="skill-tag">Competitive Programming & Algorithmic Design</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Database Systems</span>
+                <span class="skill-tag">Data Management</span>
+                <span class="skill-tag">Deep Research</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">JavaFX</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Prompt Engineering</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Connect</h2>
+            <p>Currently open to undergraduate research opportunities and summer internships.</p>
+            <p><strong>Email:</strong> <a href="jacobyousif10@gmail.com">jacobyousif10@gmail.com</a></p>
+            <p><strong>Professional:</strong> <a href="https://www.linkedin.com/in/-jacobyousif/">LinkedIn Profile</a></p>
+        </section>
+
+        <div class="footer">
+            &copy; 2026 Jacob Yousif. Created with GitHub Pages.
+        </div>
+    </div>
+
+</body>
+</html>
