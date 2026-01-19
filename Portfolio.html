@@ -29,9 +29,9 @@
             padding: 2rem;
         }
 
+        /* Updated Header Layout */
         header {
-            padding: 4rem 0 2rem 0;
-            text-align: left;
+            padding: 100px 0 2rem 0; /* Increased top padding to clear the fixed nav */
             border-bottom: 1px solid var(--border);
         }
 
@@ -151,15 +151,63 @@
             padding-top: 80px; 
             margin-top: -20px;
         }
+
+        .header-content {
+            display: flex;
+            flex-direction: row;    /* Force side-by-side */
+            align-items: center;    /* Align image and text vertically */
+            justify-content: flex-start;
+            gap: 3rem;              /* Space between image and name */
+        }
+
+        .profile-pic {
+            width: 200px;           /* Fixed width */
+            height: 250px;          /* Fixed height - maintains a professional rectangular look */
+            object-fit: cover;      /* CRITICAL: Crops the high-res image instead of squishing it */
+            
+            /* Quality Fixes for High-Res Downscaling */
+            image-rendering: auto; 
+            border: 3px solid var(--accent);
+            border-radius: 8px;     /* Subtle rounded corners instead of a circle for better quality */
+            flex-shrink: 0;         /* Stops the image from being pushed/shrunk */
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-text h1 {
+            margin: 0;              /* Remove default margins pushing text away */
+        }
+
+        /* Mobile Responsive Fix */
+        @media (max-width: 700px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <h1>Jacob Yousif</h1>
-            <p class="subtitle">About Me</p>
-            <p style="color: var(--secondary);">I am a <strong>Junior</strong> at the University of Detroit Mercy studying <strong>Computer Science</strong> with a minor in <strong>Business</strong>. <br>Experienced with <Strong>AI</Strong>, <Strong>Python</Strong>, <Strong>Java</Strong>, <Strong>C++</Strong>, and more.<br>Work experience in research focusing on <Strong>artificial intelligence</Strong>.</p>
+            <div class="container"> <div class="header-content">
+                <img src="headshot fr.jpg" alt="Profile" class="profile-pic">
+                
+                <div class="header-text">
+                    <h1>Jacob Yousif</h1>
+                    <p class="subtitle">ABOUT ME</p>
+                    <p style="color: var(--secondary); max-width: 500px;">
+                        I am a <strong>Junior</strong> at the University of Detroit Mercy studying <strong>Computer Science</strong> with a minor in <strong>Business</strong>. <br>Experienced with <Strong>AI</Strong>, <Strong>Python</Strong>, <Strong>Java</Strong>, <Strong>C++</Strong>, and more.<br>Work experience in research focusing on <Strong>artificial intelligence</Strong>.</p>
+                    </p>
+                </div>
+            </div>
+        </div>
         </header>
 
         <nav>
