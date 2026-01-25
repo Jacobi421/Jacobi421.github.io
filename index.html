@@ -318,6 +318,64 @@
         .project-gallery::-webkit-scrollbar-thumb:hover {
             background: var(--accent);
         }
+
+        /* The Modal Background */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 2000; /* Sits on top of EVERYTHING else */
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(15, 23, 42, 0.95); /* Deep dark blue with high opacity */
+            backdrop-filter: blur(5px);
+        }
+        
+        /* The actual image in the popup */
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            animation: zoomIn 0.3s;
+        }
+        
+        @keyframes zoomIn {
+            from {transform: scale(0.9); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+        
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: var(--text);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .close:hover {
+            color: var(--accent);
+        }
+        
+        /* Make your gallery images look clickable */
+        .project-gallery img {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .project-gallery img:hover {
+            opacity: 0.8;
+            border-color: var(--accent);
+        }
     </style>
 </head>
 <body>
@@ -387,11 +445,11 @@
                 </p>
 
                 <div class="project-gallery">
-                    <img src="ICPC4.JPG" alt="Group Photo">
-                    <img src="ICPC1.JPG" alt="Candid Group Photo">
-                    <img src="ICPC2.JPG" alt="Candid Group Photo">
-                    <img src="ICPC3.JPG" alt="Candid Group Photo">
-                    <img src="ICPC5.JPG" alt="C++ Creater Speaking">
+                    <img src="ICPC4.JPG" alt="Group Photo" onclick="openModal(this)">
+                    <img src="ICPC1.JPG" alt="Candid Group Photo" onclick="openModal(this)">
+                    <img src="ICPC2.JPG" alt="Candid Group Photo" onclick="openModal(this)">
+                    <img src="ICPC3.JPG" alt="Candid Group Photo" onclick="openModal(this)">
+                    <img src="ICPC5.JPG" alt="C++ Creater Speaking" onclick="openModal(this)">
                 </div>
             </div>
         </section>
@@ -537,6 +595,12 @@
         </div>
     </div>
 
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="expandedImg">
+        <div id="caption"></div>
+    </div>
+
 </body>
 
 <script>
@@ -569,7 +633,32 @@
             btn.style.display = "none"; // Hides the button after use
         }
     }
+
+    <script>
+    function openModal(imgElement) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("expandedImg");
+        var captionText = document.getElementById("caption");
+
+        modal.style.display = "block";
+        modalImg.src = imgElement.src; // Copies the clicked image path
+        captionText.innerHTML = imgElement.alt; // Uses the 'alt' text as a title
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+
+    // Close the modal if user clicks anywhere outside the image
+    window.onclick = function(event) {
+        var modal = document.getElementById("imageModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </script>
 
 </html>
+
 
